@@ -15,7 +15,9 @@
 
   <ItemGroup>
     <Folder Include="Jsons\" />
-    <Folder Include="Pages\" />
+    <Folder Include="Pages\CreateArticlePage\" />
+    <Folder Include="Pages\ProfilePage\" />
+    <Folder Include="Pages\RegistrationPage\" />
   </ItemGroup>
 
 </Project>

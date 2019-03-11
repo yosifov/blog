@@ -1,4 +1,4 @@
-﻿namespace Blog.Tests
+﻿namespace Blog.Tests.Models
 {
     using Newtonsoft.Json;
 

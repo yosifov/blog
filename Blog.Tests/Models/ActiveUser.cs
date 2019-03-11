@@ -1,9 +1,12 @@
-﻿namespace Blog.Tests
+﻿namespace Blog.Tests.Models
 {
     using Newtonsoft.Json;
 
     public partial class ActiveUser
     {
+        [JsonProperty("email")]
+        public string Email { get; set; }
+
         [JsonProperty("currentPassword")]
         public string CurrentPassword { get; set; }
 
