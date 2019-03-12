@@ -12,6 +12,6 @@
 
         public IWebElement LoginButton => Wait.Until(d => d.FindElement(By.XPath("/html/body/div[2]/div/div/form/div[4]/div/input")));
 
-        public IWebElement LoginPageTitle => Wait.Until(d => d.FindElement(By.TagName("title")));
+        public IWebElement LoginPageHeader => Wait.Until(d => d.FindElement(By.XPath("/html/body/div[2]/div/div/h2")));
     }
 }
