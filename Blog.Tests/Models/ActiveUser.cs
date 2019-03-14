@@ -16,6 +16,6 @@
         [JsonProperty("confirmPassword")]
         public string ConfirmPassword { get; set; }
 
-        public static ActiveUser FromJson(string json) => JsonConvert.DeserializeObject<ActiveUser>(json, Blog.Tests.Converter.Settings);
+        public static ActiveUser FromJson(string json) => JsonConvert.DeserializeObject<ActiveUser>(json, Converter.Settings);
     }
 }

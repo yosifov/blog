@@ -10,6 +10,6 @@
         [JsonProperty("content")]
         public string Content { get; set; }
 
-        public static Article FromJson(string json) => JsonConvert.DeserializeObject<Article>(json, Blog.Tests.Converter.Settings);
+        public static Article FromJson(string json) => JsonConvert.DeserializeObject<Article>(json, Converter.Settings);
     }
 }
