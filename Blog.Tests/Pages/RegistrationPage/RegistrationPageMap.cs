@@ -14,6 +14,8 @@
 
         public IWebElement RegisterButton => Wait.Until(d => d.FindElement(By.XPath("/html/body/div[2]/div/div/form/div[6]/div/input")));
 
+        public IWebElement ErrorMsg => Wait.Until(d => d.FindElement(By.ClassName("validation-summary-errors")));
+
         public IWebElement RegisterPageHeader => Wait.Until(d => d.FindElement(By.XPath("/html/body/div[2]/div/div/h2")));
     }
 }

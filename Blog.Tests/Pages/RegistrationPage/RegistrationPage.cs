@@ -16,7 +16,6 @@
             FullName.SendKeys(user.FullName);
             Password.SendKeys(user.Password);
             ConfirmPassword.SendKeys(user.ConfirmPassword);
-            RegisterButton.Click();
         }
     }
 }

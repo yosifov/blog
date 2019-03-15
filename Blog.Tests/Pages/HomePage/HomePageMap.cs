@@ -10,6 +10,6 @@
 
         public IWebElement FirstArticleLink => Wait.Until(d => d.FindElement(By.XPath("/html/body/div[2]/div/div/div[1]/article/header/h2/a")));
 
-        public IWebElement HomePageTitle => Wait.Until(d => d.FindElement(By.TagName("title")));
+        public string HomePageTitle => Wait.Until(d => d.Title);
     }
 }
