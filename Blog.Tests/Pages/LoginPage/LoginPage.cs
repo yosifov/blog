@@ -14,7 +14,7 @@
         {
             Email.SendKeys(user.Email);
             Password.SendKeys(user.CurrentPassword);
-            RememberMe.Click();
+            LoginButton.Click();
         }
     }
 }

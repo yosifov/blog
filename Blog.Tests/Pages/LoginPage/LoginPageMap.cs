@@ -12,6 +12,8 @@
 
         public IWebElement LoginButton => Wait.Until(d => d.FindElement(By.XPath("/html/body/div[2]/div/div/form/div[4]/div/input")));
 
+        public IWebElement ErrorMsg => Wait.Until(d => d.FindElement(By.ClassName("validation-summary-errors")));
+
         public IWebElement LoginPageHeader => Wait.Until(d => d.FindElement(By.XPath("/html/body/div[2]/div/div/h2")));
     }
 }

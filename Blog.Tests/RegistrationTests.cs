@@ -1,13 +1,8 @@
 ﻿namespace Blog.Tests
 {
     using Blog.Tests.Models;
-    using Blog.Tests.Pages;
     using NUnit.Framework;
-    using OpenQA.Selenium;
-    using OpenQA.Selenium.Chrome;
-    using System;
     using System.IO;
-    using System.Threading;
 
     [TestFixture]
     public class RegistrationTests : BaseTest

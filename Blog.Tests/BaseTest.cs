@@ -4,10 +4,8 @@
     using NUnit.Framework;
     using OpenQA.Selenium;
     using OpenQA.Selenium.Chrome;
-    using System;
     using System.IO;
     using System.Reflection;
-    using System.Threading;
 
     [TestFixture]
     public class BaseTest
