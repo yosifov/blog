@@ -10,9 +10,12 @@
     [TestFixture]
     public class BaseTest
     {
-        private IWebDriver driver;
-        private HomePage homePage;
-        private LoginPage loginPage;
+        protected IWebDriver driver;
+        protected HomePage homePage;
+        protected LoginPage loginPage;
+        protected RegistrationPage registrationPage;
+        protected ProfilePage profilePage;
+        protected CreateArticlePage createArticlePage;
 
         [SetUp]
         public void SetUp()
@@ -28,6 +31,15 @@
 
             // Login Page
             loginPage = new LoginPage(driver);
+
+            // Registration Page
+            registrationPage = new RegistrationPage(driver);
+
+            // Profile Page
+            profilePage = new ProfilePage(driver);
+
+            // Create Article Page
+            createArticlePage = new CreateArticlePage(driver);
         }
 
         [TearDown]

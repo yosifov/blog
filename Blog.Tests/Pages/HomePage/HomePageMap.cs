@@ -4,7 +4,7 @@
 
     public partial class HomePage : BasePage
     {
-        public IWebElement SignInButton => Wait.Until(d => d.FindElement(By.Id("registerLink")));
+        public IWebElement RegisterButton => Wait.Until(d => d.FindElement(By.Id("registerLink")));
 
         public IWebElement LogInButton => Wait.Until(d => d.FindElement(By.Id("loginLink")));
 
