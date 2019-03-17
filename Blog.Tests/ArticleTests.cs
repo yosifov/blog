@@ -84,6 +84,47 @@
 
         [Test]
         [Order(7)]
+        public void DeleteArticleFromAnotherAuthor()
+        {
+            // Arange
+            var userPath = Path.GetFullPath(
+                Directory
+                .GetCurrentDirectory() + "/../../../Jsons/LoginUserWithValidCredentials.json");
+            var user = ActiveUser.FromJson(File.ReadAllText(userPath));
+
+            var secondUserPath = Path.GetFullPath(
+                Directory
+                .GetCurrentDirectory() + "/../../../Jsons/LoginSecondUserWithValidCredentials.json");
+            var secondUser = ActiveUser.FromJson(File.ReadAllText(secondUserPath));
+
+            var articlePath = Path.GetFullPath(
+                Directory
+                .GetCurrentDirectory() + "/../../../Jsons/ArticleWithValidData_DeleteTest.json");
+
+            var article = Article.FromJson(File.ReadAllText(articlePath));
+
+            // Act
+            driver.Navigate().GoToUrl(loginPage.Url);
+            loginPage.LogIn(user);
+
+            homePage.CreateButton.Click();
+            createArticlePage.CreateArticleForm(article);
+
+            homePage.LogOffButton.Click();
+            driver.Navigate().GoToUrl(loginPage.Url);
+            loginPage.LogIn(secondUser);
+
+            IWebElement deleteArticle = driver.FindElement(By.LinkText(article.Title));
+            deleteArticle.Click();
+
+            articleMainPage.DeleteButton.Click();
+
+            // Assert
+            Assert.That(articleMainPage.ErrorMsg.Text.Contains("You can't delete article from another user."));
+        }
+
+        [Test]
+        [Order(8)]
         public void EditArticleAsAuthor()
         {
             // Arange
@@ -118,11 +159,52 @@
             }
 
             // Assert
-            Assert.That(allArticleTitles.Contains(article.Title+"Edit"));
+            Assert.That(allArticleTitles.Contains(article.Title+" Edit"));
         }
 
         [Test]
-        [Order(8)]
+        [Order(9)]
+        public void EditArticleFromAnotherAuthor()
+        {
+            // Arange
+            var userPath = Path.GetFullPath(
+                Directory
+                .GetCurrentDirectory() + "/../../../Jsons/LoginUserWithValidCredentials.json");
+            var user = ActiveUser.FromJson(File.ReadAllText(userPath));
+
+            var secondUserPath = Path.GetFullPath(
+                Directory
+                .GetCurrentDirectory() + "/../../../Jsons/LoginSecondUserWithValidCredentials.json");
+            var secondUser = ActiveUser.FromJson(File.ReadAllText(secondUserPath));
+
+            var articlePath = Path.GetFullPath(
+                Directory
+                .GetCurrentDirectory() + "/../../../Jsons/ArticleWithValidData_DeleteTest.json");
+
+            var article = Article.FromJson(File.ReadAllText(articlePath));
+
+            // Act
+            driver.Navigate().GoToUrl(loginPage.Url);
+            loginPage.LogIn(user);
+
+            homePage.CreateButton.Click();
+            createArticlePage.CreateArticleForm(article);
+
+            homePage.LogOffButton.Click();
+            driver.Navigate().GoToUrl(loginPage.Url);
+            loginPage.LogIn(secondUser);
+
+            IWebElement editArticle = driver.FindElement(By.LinkText(article.Title));
+            editArticle.Click();
+
+            articleMainPage.EditButton.Click();
+
+            // Assert
+            Assert.That(articleMainPage.ErrorMsg.Text.Contains("You can't edit article from another user."));
+        }
+
+        [Test]
+        [Order(10)]
         [TestCase("ArticleWithInValidContent")]
         [TestCase("ArticleWithInValidTitle")]
         [TestCase("ArticleWithEmptyData")]
@@ -159,14 +241,12 @@
                     errorMessage = "The Title field is required.";
                     break;
                 case "ArticleWithEmptyData":
-                    errorMessage = "The Title field is required.";
+                    errorMessage = "The Title field is required.\r\nThe Content field is required.";
                     break;
                 default:
                     break;
             }
-            
             Assert.That(createArticlePage.ErrorMsg.Text.Contains($"{errorMessage}"));
         }
-
     }
 }

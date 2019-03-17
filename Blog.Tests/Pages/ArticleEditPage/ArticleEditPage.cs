@@ -10,8 +10,8 @@
 
         public void EditArticleForm()
         {
-            Title.SendKeys("Edit");
-            Content.SendKeys("Edit");
+            Title.SendKeys(" Edit");
+            Content.SendKeys(" Edit");
             EditButton.Click();
         }
     }
