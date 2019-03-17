@@ -8,6 +8,7 @@
     public class RegistrationTests : BaseTest
     {
         [Test]
+        [Order(1)]
         public void RegisterUserWithValidData()
         {
             // Arrange
@@ -28,6 +29,7 @@
         }
 
         [Test]
+        [Order(2)]
         [TestCase("RegisterInvalidEmail")]
         [TestCase("RegisterEmptyData")]
         [TestCase("RegisterInvalidConfirmationPassword")]

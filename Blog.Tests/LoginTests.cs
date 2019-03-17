@@ -8,6 +8,7 @@
     public class LoginTests : BaseTest
     {
         [Test]
+        [Order(3)]
         [TestCase("Login")]
         [TestCase("Logout")]
         public void LoginWithValidCredentials(string testCase)
@@ -38,6 +39,7 @@
         }
 
         [Test]
+        [Order(4)]
         public void LoginWithInvalidCredentials()
         {
             // Arange

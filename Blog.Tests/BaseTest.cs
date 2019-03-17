@@ -16,6 +16,9 @@
         protected RegistrationPage registrationPage;
         protected ProfilePage profilePage;
         protected CreateArticlePage createArticlePage;
+        protected ArticleMainPage articleMainPage;
+        protected ArticleDeletePage articleDeletePage;
+        protected ArticleEditPage articleEditPage;
 
         [SetUp]
         public void SetUp()
@@ -40,6 +43,15 @@
 
             // Create Article Page
             createArticlePage = new CreateArticlePage(driver);
+
+            // Article Main Page
+            articleMainPage = new ArticleMainPage(driver);
+
+            // Article Delete Page
+            articleDeletePage = new ArticleDeletePage(driver);
+
+            // Article Edit Page
+            articleEditPage = new ArticleEditPage(driver);
         }
 
         [TearDown]
