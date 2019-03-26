@@ -8,6 +8,7 @@
     public class PasswordTests : BaseTest
     {
         [Test]
+        [Category("UI")]
         public void ChangePasswordWithValidData()
         {
             // Arange
@@ -29,6 +30,7 @@
         }
 
         [Test]
+        [Category("UI")]
         [TestCase("ChangePasswordWithEmptyNewPassword")]
         [TestCase("ChangePasswordWithWrongConfirmationPassword")]
         public void ChangePasswordWithInvalidData(string jsonFileName)

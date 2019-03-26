@@ -11,6 +11,7 @@
     {
         [Test]
         [Order(5)]
+        [Category("UI")]
         public void CreateArticleWithValidData()
         {
             // Arange
@@ -45,6 +46,7 @@
 
         [Test]
         [Order(6)]
+        [Category("UI")]
         public void DeleteArticleAsAuthor()
         {
             // Arange
@@ -84,6 +86,7 @@
 
         [Test]
         [Order(7)]
+        [Category("UI")]
         public void DeleteArticleFromAnotherAuthor()
         {
             // Arange
@@ -125,6 +128,7 @@
 
         [Test]
         [Order(8)]
+        [Category("UI")]
         public void EditArticleAsAuthor()
         {
             // Arange
@@ -164,6 +168,7 @@
 
         [Test]
         [Order(9)]
+        [Category("UI")]
         public void EditArticleFromAnotherAuthor()
         {
             // Arange
@@ -205,6 +210,7 @@
 
         [Test]
         [Order(10)]
+        [Category("UI")]
         [TestCase("ArticleWithInValidContent")]
         [TestCase("ArticleWithInValidTitle")]
         [TestCase("ArticleWithEmptyData")]

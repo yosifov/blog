@@ -9,6 +9,7 @@
     {
         [Test]
         [Order(1)]
+        [Category("UI")]
         public void RegisterUserWithValidData()
         {
             // Arrange
@@ -30,6 +31,7 @@
 
         [Test]
         [Order(2)]
+        [Category("UI")]
         [TestCase("RegisterInvalidEmail")]
         [TestCase("RegisterEmptyData")]
         [TestCase("RegisterInvalidConfirmationPassword")]

@@ -9,6 +9,7 @@
     {
         [Test]
         [Order(3)]
+        [Category("UI")]
         [TestCase("Login")]
         [TestCase("Logout")]
         public void LoginWithValidCredentials(string testCase)
@@ -40,6 +41,7 @@
 
         [Test]
         [Order(4)]
+        [Category("UI")]
         public void LoginWithInvalidCredentials()
         {
             // Arange
