@@ -163,7 +163,7 @@
             }
 
             // Assert
-            Assert.That(allArticleTitles.Contains(article.Title+" Edit"));
+            Assert.That(allArticleTitles.Contains(article.Title+ " This Article Title Was Edited"));
         }
 
         [Test]

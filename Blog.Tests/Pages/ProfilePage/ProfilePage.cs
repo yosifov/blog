@@ -8,7 +8,7 @@
         public ProfilePage(IWebDriver driver) : base(driver)
         { }
 
-        public string Url = "http://localhost:60634/Manage";
+        public string Url = "https://demoprojectblog.azurewebsites.net/Manage";
 
         public void ChangePasswordForm(ActiveUser user)
         {

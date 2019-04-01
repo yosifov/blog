@@ -17,6 +17,6 @@
 
         public WebDriverWait Wait => new WebDriverWait(_driver, TimeSpan.FromSeconds(20));
 
-        public string BaseUrl => "http://localhost:60634/";
+        public string BaseUrl => "https://demoprojectblog.azurewebsites.net";
     }
 }

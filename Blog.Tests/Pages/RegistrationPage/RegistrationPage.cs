@@ -8,7 +8,7 @@
         public RegistrationPage(IWebDriver driver) : base(driver)
         { }
 
-        public string Url => "http://localhost:60634/Account/Register";
+        public string Url => "https://demoprojectblog.azurewebsites.net/Account/Register";
 
         public void FillForm(RegistrationUser user)
         {

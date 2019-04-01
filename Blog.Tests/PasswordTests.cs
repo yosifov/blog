@@ -8,6 +8,7 @@
     public class PasswordTests : BaseTest
     {
         [Test]
+        [Order(11)]
         [Category("UI")]
         public void ChangePasswordWithValidData()
         {
@@ -15,7 +16,12 @@
             var userPath = Path.GetFullPath(
                 Directory
                 .GetCurrentDirectory() + "/../../../Jsons/ChangePasswordWithValidData.json");
+
             var user = ActiveUser.FromJson(File.ReadAllText(userPath));
+
+            var passwordChange = new SwapPasswordsAfterPasswordChange();
+            passwordChange.SwapPasswords(userPath);
+
 
             // Act
             driver.Navigate().GoToUrl(loginPage.Url);
@@ -30,6 +36,7 @@
         }
 
         [Test]
+        [Order(12)]
         [Category("UI")]
         [TestCase("ChangePasswordWithEmptyNewPassword")]
         [TestCase("ChangePasswordWithWrongConfirmationPassword")]

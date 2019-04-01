@@ -8,7 +8,7 @@
         public LoginPage(IWebDriver driver) : base(driver)
         { }
 
-        public string Url => "http://localhost:60634/Account/Login";
+        public string Url => "https://demoprojectblog.azurewebsites.net/Account/Login";
 
         public void LogIn(ActiveUser user)
         {

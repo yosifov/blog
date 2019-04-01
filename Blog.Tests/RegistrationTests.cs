@@ -1,8 +1,11 @@
 ﻿namespace Blog.Tests
 {
     using Blog.Tests.Models;
+    using Newtonsoft.Json.Linq;
     using NUnit.Framework;
+    using System;
     using System.IO;
+    using System.Linq;
 
     [TestFixture]
     public class RegistrationTests : BaseTest
@@ -16,6 +19,10 @@
             var userPath = Path.GetFullPath(
                 Directory
                 .GetCurrentDirectory() + "/../../../Jsons/RegistrationUserWithValidData.json");
+
+            var newUniqueUser = new GenerateNewUser();
+            newUniqueUser.NewUser(userPath);
+
             var user = RegistrationUser.FromJson(File.ReadAllText(userPath));
 
             // Act
