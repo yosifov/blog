@@ -14,12 +14,11 @@
         public void SetUp()
         {
             Client = new HttpClient();
-            Client.BaseAddress = new Uri("http://localhost:60634");
-
+            Client.BaseAddress = new Uri("https://demoprojectblog.azurewebsites.net");
+            var test = Guid.Empty.ToString();
         }
 
         public Fixture Fixture => new Fixture();
-
        
     }
 }
