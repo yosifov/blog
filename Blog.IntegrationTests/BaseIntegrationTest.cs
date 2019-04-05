@@ -21,13 +21,21 @@
 
 
             //Path to directory depending of the Domain Name (local or azure)
-            if (Environment.UserDomainName == "fv-az608") //This is the Domain Name of Azure
+            //if (Environment.UserDomainName == "fv-az608") //This is the Domain Name of Azure
+            //{
+            //    directoryPath = "D:\a\r1\a";
+            //}
+            //else
+            //{
+            //    directoryPath = Directory.GetCurrentDirectory() + "/../../..";
+            //}
+            if (Environment.UserDomainName == "WARLUS") //This is the Domain Name of Azure
             {
-                directoryPath = "D:\a\r1\a";
+                directoryPath = Directory.GetCurrentDirectory() + "/../../..";
             }
             else
             {
-                directoryPath = Directory.GetCurrentDirectory() + "/../../..";
+                directoryPath = Directory.GetCurrentDirectory();
             }
         }
 
