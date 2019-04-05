@@ -59,7 +59,7 @@
             //Path to directory depending of the Domain Name (local or azure)
             if (Environment.UserDomainName == "fv-az608") //This is the Domain Name of Azure
             {
-                directoryPath = "";
+                directoryPath = "/a/_Dulcy-Tests/drop";
             }
             else
             {
