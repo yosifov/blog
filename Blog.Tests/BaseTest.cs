@@ -21,6 +21,7 @@
         protected ArticleMainPage articleMainPage;
         protected ArticleDeletePage articleDeletePage;
         protected ArticleEditPage articleEditPage;
+        protected string directoryPath;
 
         [SetUp]
         public void SetUp()
@@ -54,6 +55,17 @@
 
             // Article Edit Page
             articleEditPage = new ArticleEditPage(driver);
+
+            //Path to directory depending of the Domain Name (local or azure)
+            if (Environment.UserDomainName == "fv-az608") //This is the Domain Name of Azure
+            {
+                directoryPath = "";
+            }
+            else
+            {
+                directoryPath = "/../../..";
+            }
+            
         }
 
         [TearDown]

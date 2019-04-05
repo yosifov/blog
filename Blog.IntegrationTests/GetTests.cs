@@ -43,7 +43,7 @@
         {
             //Arrange
             var request = new HttpRequestMessage(HttpMethod.Get, "/Article/Details/1");
-            var path = Path.GetFullPath(Directory.GetCurrentDirectory() + "/../../../Article.json");
+            var path = Path.GetFullPath(Directory.GetCurrentDirectory() + directoryPath + "/Article.json");
 
             //Act
             var response = await Client.SendAsync(request);

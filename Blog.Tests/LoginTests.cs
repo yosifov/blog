@@ -17,7 +17,7 @@
             // Arange
             var userPath = Path.GetFullPath(
                 Directory
-                .GetCurrentDirectory() + "/../../../Jsons/LoginUserWithValidCredentials.json");
+                .GetCurrentDirectory() + directoryPath + "/Jsons/LoginUserWithValidCredentials.json");
             var user = ActiveUser.FromJson(File.ReadAllText(userPath));
 
             // Act
@@ -47,7 +47,7 @@
             // Arange
             var userPath = Path.GetFullPath(
                 Directory
-                .GetCurrentDirectory() + "/../../../Jsons/LoginUserWithInvalidCredentials.json");
+                .GetCurrentDirectory() + directoryPath + "/Jsons/LoginUserWithInvalidCredentials.json");
             var user = ActiveUser.FromJson(File.ReadAllText(userPath));
 
             // Act

@@ -15,7 +15,7 @@
             // Arange
             var userPath = Path.GetFullPath(
                 Directory
-                .GetCurrentDirectory() + "/../../../Jsons/ChangePasswordWithValidData.json");
+                .GetCurrentDirectory() + directoryPath + "/Jsons/ChangePasswordWithValidData.json");
 
             var user = ActiveUser.FromJson(File.ReadAllText(userPath));
 
@@ -45,7 +45,7 @@
             // Arange
             var userPath = Path.GetFullPath(
                 Directory
-                .GetCurrentDirectory() + $"/../../../Jsons/{jsonFileName}.json");
+                .GetCurrentDirectory() + directoryPath + $"/Jsons/{jsonFileName}.json");
             var user = ActiveUser.FromJson(File.ReadAllText(userPath));
 
             // Act
