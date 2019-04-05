@@ -11,6 +11,7 @@
     public class GetTests : BaseIntegrationTest
     {
         [Test]
+        [Category("Integration")]
         public async Task GetOkStatusCode()
         {
             //Arrange
@@ -25,6 +26,7 @@
         }
 
         [Test]
+        [Category("Integration")]
         public async Task GetRegistrationForm()
         {
             //Arrange
@@ -39,6 +41,7 @@
         }
 
         [Test]
+        [Category("Integration")]
         public async Task GetASingleArticle()
         {
             //Arrange
