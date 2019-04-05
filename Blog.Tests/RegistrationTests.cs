@@ -44,7 +44,7 @@
         public void RegisterUserWithInvalidData(string jsonFileName)
         {
             // Arange
-            var userPath = Path.GetFullPath(directoryPath + $" / Jsons/{jsonFileName}.json");
+            var userPath = Path.GetFullPath(directoryPath + $"/Jsons/{jsonFileName}.json");
             var user = RegistrationUser.FromJson(File.ReadAllText(userPath));
 
             // Act
