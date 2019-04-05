@@ -15,14 +15,10 @@
         public void CreateArticleWithValidData()
         {
             // Arange
-            var userPath = Path.GetFullPath(
-                Directory
-                .GetCurrentDirectory() + "/../../../Jsons/LoginUserWithValidCredentials.json");
+            var userPath = Path.GetFullPath(directoryPath + "/Jsons/LoginUserWithValidCredentials.json");
             var user = ActiveUser.FromJson(File.ReadAllText(userPath));
 
-            var articlePath = Path.GetFullPath(
-                Directory
-                .GetCurrentDirectory() + "/../../../Jsons/ArticleWithValidData.json");
+            var articlePath = Path.GetFullPath(directoryPath + "/Jsons/ArticleWithValidData.json");
 
             var article = Article.FromJson(File.ReadAllText(articlePath));
 
@@ -50,14 +46,10 @@
         public void DeleteArticleAsAuthor()
         {
             // Arange
-            var userPath = Path.GetFullPath(
-                Directory
-                .GetCurrentDirectory() + "/../../../Jsons/LoginUserWithValidCredentials.json");
+            var userPath = Path.GetFullPath(directoryPath + "/Jsons/LoginUserWithValidCredentials.json");
             var user = ActiveUser.FromJson(File.ReadAllText(userPath));
 
-            var articlePath = Path.GetFullPath(
-                Directory
-                .GetCurrentDirectory() + "/../../../Jsons/ArticleWithValidData_DeleteTest.json");
+            var articlePath = Path.GetFullPath(directoryPath + "/Jsons/ArticleWithValidData_DeleteTest.json");
 
             var article = Article.FromJson(File.ReadAllText(articlePath));
 
@@ -90,19 +82,13 @@
         public void DeleteArticleFromAnotherAuthor()
         {
             // Arange
-            var userPath = Path.GetFullPath(
-                Directory
-                .GetCurrentDirectory() + "/../../../Jsons/LoginUserWithValidCredentials.json");
+            var userPath = Path.GetFullPath(directoryPath + "/Jsons/LoginUserWithValidCredentials.json");
             var user = ActiveUser.FromJson(File.ReadAllText(userPath));
 
-            var secondUserPath = Path.GetFullPath(
-                Directory
-                .GetCurrentDirectory() + "/../../../Jsons/LoginSecondUserWithValidCredentials.json");
+            var secondUserPath = Path.GetFullPath(directoryPath + "/Jsons/LoginSecondUserWithValidCredentials.json");
             var secondUser = ActiveUser.FromJson(File.ReadAllText(secondUserPath));
 
-            var articlePath = Path.GetFullPath(
-                Directory
-                .GetCurrentDirectory() + "/../../../Jsons/ArticleWithValidData_DeleteTest.json");
+            var articlePath = Path.GetFullPath(directoryPath + "/Jsons/ArticleWithValidData_DeleteTest.json");
 
             var article = Article.FromJson(File.ReadAllText(articlePath));
 
@@ -132,14 +118,10 @@
         public void EditArticleAsAuthor()
         {
             // Arange
-            var userPath = Path.GetFullPath(
-                Directory
-                .GetCurrentDirectory() + "/../../../Jsons/LoginUserWithValidCredentials.json");
+            var userPath = Path.GetFullPath(directoryPath + "/Jsons/LoginUserWithValidCredentials.json");
             var user = ActiveUser.FromJson(File.ReadAllText(userPath));
 
-            var articlePath = Path.GetFullPath(
-                Directory
-                .GetCurrentDirectory() + "/../../../Jsons/ArticleWithValidData.json");
+            var articlePath = Path.GetFullPath(directoryPath + "/Jsons/ArticleWithValidData.json");
 
             var article = Article.FromJson(File.ReadAllText(articlePath));
 
@@ -172,19 +154,13 @@
         public void EditArticleFromAnotherAuthor()
         {
             // Arange
-            var userPath = Path.GetFullPath(
-                Directory
-                .GetCurrentDirectory() + "/../../../Jsons/LoginUserWithValidCredentials.json");
+            var userPath = Path.GetFullPath(directoryPath + "/Jsons/LoginUserWithValidCredentials.json");
             var user = ActiveUser.FromJson(File.ReadAllText(userPath));
 
-            var secondUserPath = Path.GetFullPath(
-                Directory
-                .GetCurrentDirectory() + "/../../../Jsons/LoginSecondUserWithValidCredentials.json");
+            var secondUserPath = Path.GetFullPath(directoryPath + "/Jsons/LoginSecondUserWithValidCredentials.json");
             var secondUser = ActiveUser.FromJson(File.ReadAllText(secondUserPath));
 
-            var articlePath = Path.GetFullPath(
-                Directory
-                .GetCurrentDirectory() + "/../../../Jsons/ArticleWithValidData_DeleteTest.json");
+            var articlePath = Path.GetFullPath(directoryPath + "/Jsons/ArticleWithValidData_DeleteTest.json");
 
             var article = Article.FromJson(File.ReadAllText(articlePath));
 
@@ -217,14 +193,10 @@
         public void CreateArticleWithInValidData(string jsonFileName)
         {
             // Arange
-            var userPath = Path.GetFullPath(
-                Directory
-                .GetCurrentDirectory() + "/../../../Jsons/LoginUserWithValidCredentials.json");
+            var userPath = Path.GetFullPath(directoryPath + "/Jsons/LoginUserWithValidCredentials.json");
             var user = ActiveUser.FromJson(File.ReadAllText(userPath));
 
-            var articlePath = Path.GetFullPath(
-                Directory
-                .GetCurrentDirectory() + $"/../../../Jsons/{jsonFileName}.json");
+            var articlePath = Path.GetFullPath(directoryPath + $"/Jsons/{jsonFileName}.json");
 
             var article = Article.FromJson(File.ReadAllText(articlePath));
 

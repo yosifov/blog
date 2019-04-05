@@ -15,9 +15,7 @@
         public void LoginWithValidCredentials(string testCase)
         {
             // Arange
-            var userPath = Path.GetFullPath(
-                Directory
-                .GetCurrentDirectory() + directoryPath + "/Jsons/LoginUserWithValidCredentials.json");
+            var userPath = Path.GetFullPath(directoryPath + "/Jsons/LoginUserWithValidCredentials.json");
             var user = ActiveUser.FromJson(File.ReadAllText(userPath));
 
             // Act
@@ -45,9 +43,7 @@
         public void LoginWithInvalidCredentials()
         {
             // Arange
-            var userPath = Path.GetFullPath(
-                Directory
-                .GetCurrentDirectory() + directoryPath + "/Jsons/LoginUserWithInvalidCredentials.json");
+            var userPath = Path.GetFullPath(directoryPath + "/Jsons/LoginUserWithInvalidCredentials.json");
             var user = ActiveUser.FromJson(File.ReadAllText(userPath));
 
             // Act

@@ -16,9 +16,7 @@
         public void RegisterUserWithValidData()
         {
             // Arrange
-            var userPath = Path.GetFullPath(
-                Directory
-                .GetCurrentDirectory() + directoryPath + "/Jsons/RegistrationUserWithValidData.json");
+            var userPath = Path.GetFullPath(directoryPath + "/Jsons/RegistrationUserWithValidData.json");
 
             var newUniqueUser = new GenerateNewUser();
             newUniqueUser.NewUser(userPath);
@@ -46,9 +44,7 @@
         public void RegisterUserWithInvalidData(string jsonFileName)
         {
             // Arange
-            var userPath = Path.GetFullPath(
-                Directory
-                .GetCurrentDirectory() + directoryPath + $"/Jsons/{jsonFileName}.json");
+            var userPath = Path.GetFullPath(directoryPath + $" / Jsons/{jsonFileName}.json");
             var user = RegistrationUser.FromJson(File.ReadAllText(userPath));
 
             // Act

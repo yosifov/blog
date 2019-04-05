@@ -13,9 +13,7 @@
         public void ChangePasswordWithValidData()
         {
             // Arange
-            var userPath = Path.GetFullPath(
-                Directory
-                .GetCurrentDirectory() + directoryPath + "/Jsons/ChangePasswordWithValidData.json");
+            var userPath = Path.GetFullPath(directoryPath + "/Jsons/ChangePasswordWithValidData.json");
 
             var user = ActiveUser.FromJson(File.ReadAllText(userPath));
 
@@ -43,9 +41,7 @@
         public void ChangePasswordWithInvalidData(string jsonFileName)
         {
             // Arange
-            var userPath = Path.GetFullPath(
-                Directory
-                .GetCurrentDirectory() + directoryPath + $"/Jsons/{jsonFileName}.json");
+            var userPath = Path.GetFullPath(directoryPath + $"/ Jsons/{jsonFileName}.json");
             var user = ActiveUser.FromJson(File.ReadAllText(userPath));
 
             // Act
