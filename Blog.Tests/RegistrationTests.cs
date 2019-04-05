@@ -11,6 +11,29 @@
     public class RegistrationTests : BaseTest
     {
         [Test]
+        [Category("UI")]
+        public void GetEnvironmentMachineName()
+        {
+            var environnmentMachineNameQA = Environment.MachineName;
+            Assert.AreEqual("Imeto na mashinata e:", environnmentMachineNameQA);
+        }
+        [Test]
+        [Category("UI")]
+        public void GetEnvironmentCurrentDirectory()
+        {
+            var environnmentCurrentDirectoryQA = Environment.CurrentDirectory;
+            Assert.AreEqual("Direktoriqta e:", environnmentCurrentDirectoryQA);
+        }
+
+        [Test]
+        [Category("UI")]
+        public void GetEnvironmentUserDomainName()
+        {
+            var environnmentUserDomainNameQA = Environment.UserDomainName;
+            Assert.AreEqual("User domain name e:", environnmentUserDomainNameQA);
+        }
+
+        [Test]
         [Order(1)]
         [Category("UI")]
         public void RegisterUserWithValidData()

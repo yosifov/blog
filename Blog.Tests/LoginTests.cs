@@ -54,8 +54,12 @@
             driver.Navigate().GoToUrl(loginPage.Url);
             loginPage.LogIn(user);
 
+            var environmentName = System.Environment.MachineName;
             // Assert
             Assert.That(loginPage.ErrorMsg.Text.Contains("Invalid login attempt."));
+
+                
+
         }
     }
 }
