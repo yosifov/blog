@@ -15,7 +15,7 @@
             //Arrange
             var expectedUser = new Users
             {
-                Email = "",
+                Email = "lili",
                 FullName = "lili",
                 Password = "lili",
                 ConfirmPassword = "lili"
@@ -28,7 +28,7 @@
             //Assert
             response.StatusCode.Should().Be(500);
         }
-
+        
         [Test]
         [Category("Integration")]
         public async Task PostUserAlreadyRegistered_ShouldReturnInternalServerError()
@@ -52,16 +52,17 @@
 
         [Test]
         [Category("Integration")]
-        public async Task PostArticleWithNoData_ShouldReturnInternalServerError()
+        public async Task PostUserWithNoData_ShouldReturnInternalServerError()
         {
             //Arrange
-            var expectedArticle = new Article
+            var expectedUser = new Users
             {
-                Title = "",
-                Content = "",
-                
+                Email = "",
+                FullName = "",
+                Password = "",
+                ConfirmPassword = ""
             };
-            var requestContent = new StringContent(expectedArticle.ToJson());
+            var requestContent = new StringContent(expectedUser.ToJson());
 
             //Act
             var response = await Client.PostAsync("/Account/Register", requestContent);
@@ -70,13 +71,28 @@
             response.StatusCode.Should().Be(500);
         }
 
-        //[Test]
-        //[Category("Integration")]
-        //public async Task PostNewArticleWithNoData_ShouldReturnInternalServerError()
-        //{
-        //    var response = await Client.PostAsync("/Article/Create", null);
-        //    response.StatusCode.Should().Be(500);
-        //}
+        [Test]
+        [Category("Integration")]
+        public async Task PostUserWithNoName_ShouldReturnInternalServerError()
+        {
+            //Arrange
+            var expectedUser = new Users
+            {
+                Email = "lili@abv.bg",
+                FullName = "",
+                Password = "lili",
+                ConfirmPassword = "lili"
+            };
+            var requestContent = new StringContent(expectedUser.ToJson());
+
+            //Act
+            var response = await Client.PostAsync("/Account/Register", requestContent);
+
+            //Assert
+            response.StatusCode.Should().Be(500);
+        }
 
     }
+
 }
+

@@ -23,7 +23,9 @@ namespace Blog.IntegrationTests
 
         [JsonProperty("confirmPassword")]
         public string ConfirmPassword { get; set; }
-   
-        public static Users FromJson(string json) => JsonConvert.DeserializeObject<Users>(json, Blog.IntegrationTests.Converter.Settings);
-    }  
+
+        public static Users FromJson(string json) => JsonConvert.DeserializeObject<Users>(json, Converter.Settings);
+
+
+    }
 }

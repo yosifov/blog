@@ -32,7 +32,7 @@
             //Arrange
             var response = await Client.GetAsync("/Account/Register");
             response.EnsureSuccessStatusCode();
-            
+
             //Act
             var responseAsString = await response.Content.ReadAsStringAsync();
 
@@ -46,15 +46,15 @@
         {
             //Arrange
             var request = new HttpRequestMessage(HttpMethod.Get, "/Article/Details/1");
-
+            
             //Act
             var response = await Client.SendAsync(request);
-            response.EnsureSuccessStatusCode();
-            //var responseAsString = await response.Content.ReadAsStringAsync();
-
+            
             //Assert
-            //Assert.That(responseAsString.Contains("Dulcy Article"));
-        }
+            response.EnsureSuccessStatusCode();           
+              
+         }
+       
         [Test]
         [Category("Integration")]
         public async Task GetNonExistingArticle_ShouldReturnInternalServerError()
@@ -67,7 +67,9 @@
 
             //Assert
             response.StatusCode.Should().Be(500);
-        }
+        }      
+     
     }
 }
+
 
