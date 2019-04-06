@@ -15,13 +15,12 @@
         [Category("UI")]
         public void RegisterUserWithValidData()
         {
-            // Arrange
+            //Arrange
             var userPath = Path.GetFullPath(directoryPath + "/Jsons/RegistrationUserWithValidData.json");
 
             var newUniqueUser = new GenerateNewUser();
-            newUniqueUser.NewUser(userPath);
 
-            var user = RegistrationUser.FromJson(File.ReadAllText(userPath));
+            var user = RegistrationUser.FromJson(newUniqueUser.NewUser(userPath));
 
             // Act
             driver.Navigate().GoToUrl(homePage.BaseUrl);
@@ -31,7 +30,7 @@
             registrationPage.RegisterButton.Click();
 
             // Assert
-            Assert.That(homePage.HomePageTitle.Contains("List - My ASP.NET Application"));
+            Assert.That(homePage.HomePageTitle.Contains("List - My ASP.NET Application"), "But it was " + homePage.HomePageTitle);
         }
 
         [Test]
@@ -71,7 +70,7 @@
                 default:
                     break;
             }
-            Assert.That(registrationPage.ErrorMsg.Text.Contains($"{errorMessage}"));
+            Assert.That(registrationPage.ErrorMsg.Text.Contains($"{errorMessage}"), "But it was: " + homePage.HomePageTitle);
         }
     }
 }

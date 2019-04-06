@@ -13,7 +13,8 @@
 
         public IWebElement LogOffButton => Wait.Until(d => d.FindElement(By.XPath("//*[@id=\"logoutForm\"]/ul/li[3]/a")));
 
-        public IWebElement HelloButton => Wait.Until(d => d.FindElement(By.XPath("//*[@id=\"logoutForm\"]/ul/li[2]/a")));
+        //public IWebElement HelloButton => Wait.Until(d => d.FindElement(By.XPath("//*[@id=\"logoutForm\"]/ul/li[2]/a")));
+        public IWebElement HelloButton => Wait.Until(d => d.FindElement(By.CssSelector("#logoutForm>ul>li:nth-child(2)>a")));
 
         public IWebElement FirstArticleLink => Wait.Until(d => d.FindElement(By.XPath("/html/body/div[2]/div/div/div[1]/article/header/h2/a")));
 

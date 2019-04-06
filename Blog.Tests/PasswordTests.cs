@@ -28,6 +28,7 @@
             homePage.HelloButton.Click();
             profilePage.ChangePasswordButton.Click();
             profilePage.ChangePasswordForm(user);
+            profilePage.SubmitButton.Click();
 
             // Assert
             Assert.That(homePage.HelloButton.Displayed);
@@ -53,7 +54,8 @@
             profilePage.ChangePasswordButton.Click();
             
             profilePage.ChangePasswordForm(user);
-            
+            profilePage.SubmitButton.Click();
+
             // Assert
             string errorMessage = "";
             switch (jsonFileName)

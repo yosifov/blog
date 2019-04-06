@@ -57,21 +57,13 @@
             articleEditPage = new ArticleEditPage(driver);
 
             //Path to directory depending of the Domain Name (local or azure)
-            //if (Environment.UserDomainName == "fv-az608") //This is the Domain Name of Azure
-            //{
-            //    directoryPath = "D:\a\r1\a";
-            //}
-            //else
-            //{
-            //    directoryPath = Directory.GetCurrentDirectory() + "/../../..";
-            //}
-            if (Environment.UserDomainName == "WARLUS") //This is the Domain Name of Azure
+            if (Environment.UserDomainName == "fv-az608") //This is the Domain Name of Azure
             {
-                directoryPath = Directory.GetCurrentDirectory() + "/../../..";
+                directoryPath = Directory.GetCurrentDirectory();
             }
             else
             {
-                directoryPath = Directory.GetCurrentDirectory();
+                directoryPath = Directory.GetCurrentDirectory() + "/../../..";
             }
 
         }
@@ -87,6 +79,11 @@
             var path = Environment.GetEnvironmentVariable("ChromeWebDriver", EnvironmentVariableTarget.Machine);
             var options = new ChromeOptions();
             options.AddArguments("--no-sandbox");
+           
+            if (Environment.UserDomainName == "fv-az608") //This is the Domain Name of Azure
+            {
+                options.AddArguments("headless"); //Run headless on Azure
+            }
 
             if (!string.IsNullOrWhiteSpace(path))
             {

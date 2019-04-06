@@ -73,7 +73,7 @@
             }
 
             // Assert
-            Assert.False(allArticleTitles.Contains(article.Title));
+            Assert.False(allArticleTitles.Contains(article.Title),"The article is still here: " + article.Title);
         }
 
         [Test]
@@ -88,7 +88,7 @@
             var secondUserPath = Path.GetFullPath(directoryPath + "/Jsons/LoginSecondUserWithValidCredentials.json");
             var secondUser = ActiveUser.FromJson(File.ReadAllText(secondUserPath));
 
-            var articlePath = Path.GetFullPath(directoryPath + "/Jsons/ArticleWithValidData_DeleteTest.json");
+            var articlePath = Path.GetFullPath(directoryPath + "/Jsons/ArticleWithValidData_DeleteTest_AnotherAuthor.json");
 
             var article = Article.FromJson(File.ReadAllText(articlePath));
 
@@ -160,7 +160,7 @@
             var secondUserPath = Path.GetFullPath(directoryPath + "/Jsons/LoginSecondUserWithValidCredentials.json");
             var secondUser = ActiveUser.FromJson(File.ReadAllText(secondUserPath));
 
-            var articlePath = Path.GetFullPath(directoryPath + "/Jsons/ArticleWithValidData_DeleteTest.json");
+            var articlePath = Path.GetFullPath(directoryPath + "/Jsons/ArticleWithValidData_EditTest_AnotherAuthor.json");
 
             var article = Article.FromJson(File.ReadAllText(articlePath));
 

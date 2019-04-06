@@ -9,7 +9,7 @@
 
     partial class GenerateNewUser
     {
-        public void NewUser(string userPath)
+        public string NewUser(string userPath)
         {
             string json = File.ReadAllText(userPath);
 
@@ -18,17 +18,19 @@
             string email = jObject["email"].ToString();
 
             string username = email.Split('@').ElementAtOrDefault(0);
-            int lastdigit = (int)Char.GetNumericValue(username[username.Length - 1]);
-            lastdigit++;
+
+            Random rnd = new Random();
+            int userID = rnd.Next(120, 99999999);
             username = username.Remove(username.Length - 1);
             string domain = email.Split('@').ElementAtOrDefault(1);
-            string newEmail = username + lastdigit + "@" + domain;
+            string newEmail = username + userID + "@" + domain;
 
             jObject["email"] = string.Empty;
             jObject["email"] = newEmail;
 
             string output = Newtonsoft.Json.JsonConvert.SerializeObject(jObject, Newtonsoft.Json.Formatting.Indented);
-            File.WriteAllText(userPath, output);
+            //File.WriteAllText(userPath, output);
+            return output;
         }
         
     }

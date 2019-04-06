@@ -15,7 +15,6 @@
             OldPassword.SendKeys(user.CurrentPassword);
             NewPassword.SendKeys(user.NewPassword);
             ConfirmPassword.SendKeys(user.ConfirmPassword);
-            SubmitButton.Click();
         }
     }
 }
