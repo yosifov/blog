@@ -46,7 +46,6 @@
         {
             //Arrange
             var request = new HttpRequestMessage(HttpMethod.Get, "/Article/Details/1");
-            var path = Path.GetFullPath(Directory.GetCurrentDirectory() + directoryPath + "/Article.json");
 
             //Act
             var response = await Client.SendAsync(request);
@@ -54,9 +53,21 @@
             var responseAsString = await response.Content.ReadAsStringAsync();
 
             //Assert
-            Assert.That(responseAsString.Contains("Dulcy"));
+            Assert.That(responseAsString.Contains("Dulcy Article"));
         }
-        
+        [Test]
+        [Category("Integration")]
+        public async Task GetNonExistingArticle_ShouldReturnInternalServerError()
+        {
+            //Arrange
+            var request = new HttpRequestMessage(HttpMethod.Get, "/Article/Details/555");
+
+            //Act
+            var response = await Client.SendAsync(request);
+
+            //Assert
+            response.StatusCode.Should().Be(500);
+        }
     }
 }
 

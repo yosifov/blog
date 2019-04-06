@@ -9,6 +9,7 @@
     public class PostTests : BaseIntegrationTest
     {
         [Test]
+        [Category("Integration")]
         public async Task PostUserWithInvalidEmail_ShouldReturnInternalServerError()
         {
             //Arrange
@@ -27,7 +28,8 @@
         }
 
         [Test]
-        public async Task PostUserAlreadyRegister_ShouldReturnInternalServerError()
+        [Category("Integration")]
+        public async Task PostUserAlreadyRegistered_ShouldReturnInternalServerError()
         {
             //Arrange
             var expectedUser = new Users
@@ -45,6 +47,7 @@
         }
     
         [Test]
+        [Category("Integration")]
         public async Task PostNewArticleWithNoData_ShouldReturnInternalServerError()
         {
             var response = await Client.PostAsync("/Article/Create", null);

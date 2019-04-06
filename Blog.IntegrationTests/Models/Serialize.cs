@@ -16,5 +16,7 @@ namespace Blog.IntegrationTests
 
         public static string ToJson(this Password self) => JsonConvert.SerializeObject(self, Converter.Settings);
 
+        public static string ToJson(this Article self) => JsonConvert.SerializeObject(self, Converter.Settings);
+
     }
 }

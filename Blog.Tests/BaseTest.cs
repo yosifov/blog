@@ -57,11 +57,11 @@
             articleEditPage = new ArticleEditPage(driver);
 
             //Path to directory depending of the Domain Name (local or azure)
-            if (Environment.UserDomainName == "WARLUS") //This is the Domain Name of Azure
+            if (Environment.UserDomainName == "WARLUS" || Environment.UserDomainName == "KAMEN" || Environment.UserDomainName == "GAS_MT_MACHINE") //On local machine
             {
                 directoryPath = Directory.GetCurrentDirectory() + "/../../..";
             }
-            else
+            else // On azure
             {
                 directoryPath = Directory.GetCurrentDirectory();
             }
