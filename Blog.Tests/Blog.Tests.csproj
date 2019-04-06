@@ -15,4 +15,8 @@
     <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="73.0.3683.20" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Screenshots\" />
+  </ItemGroup>
+
 </Project>

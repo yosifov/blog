@@ -2,6 +2,7 @@
 {
     using Blog.Tests.Pages;
     using NUnit.Framework;
+    using NUnit.Framework.Interfaces;
     using OpenQA.Selenium;
     using OpenQA.Selenium.Chrome;
     using OpenQA.Selenium.Remote;
@@ -71,6 +72,18 @@
         [TearDown]
         public void TearDown()
         {
+            if (TestContext.CurrentContext.Result.Outcome.Status == TestStatus.Failed)
+            {
+                var screenshot = ((ITakesScreenshot)driver).GetScreenshot();
+                var testname = TestContext.CurrentContext.Test.Name
+                    .Replace("(", "")
+                    .Replace(")", "")
+                    .Replace("\"", "");
+                var path = Path.GetFullPath(directoryPath+@"\Screenshots\") +
+                                      testname + ".png";
+                screenshot.SaveAsFile(path, ScreenshotImageFormat.Png);
+            }
+
             driver.Quit();
         }
 
