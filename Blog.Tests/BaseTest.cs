@@ -82,6 +82,8 @@
                 var path = Path.GetFullPath(directoryPath+@"\Screenshots\") +
                                       testname + ".png";
                 screenshot.SaveAsFile(path, ScreenshotImageFormat.Png);
+
+                TestContext.AddTestAttachment(path);
             }
 
             driver.Quit();
