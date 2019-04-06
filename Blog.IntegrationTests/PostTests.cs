@@ -46,13 +46,13 @@
             response.StatusCode.Should().Be(500);
         }
     
-        [Test]
-        [Category("Integration")]
-        public async Task PostNewArticleWithNoData_ShouldReturnInternalServerError()
-        {
-            var response = await Client.PostAsync("/Article/Create", null);
-            response.StatusCode.Should().Be(500);
-        }
+        //[Test]
+        //[Category("Integration")]
+        //public async Task PostNewArticleWithNoData_ShouldReturnInternalServerError()
+        //{
+        //    var response = await Client.PostAsync("/Article/Create", null);
+        //    response.StatusCode.Should().Be(500);
+        //}
 
     }
 }
