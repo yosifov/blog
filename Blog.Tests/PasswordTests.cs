@@ -14,11 +14,13 @@
         {
             // Arange
             var userPath = Path.GetFullPath(directoryPath + "/Jsons/ChangePasswordWithValidData.json");
+            var userPathRestore = Path.GetFullPath(directoryPath + "/Jsons/ChangePasswordWithValidData_Restore.json");
 
             var user = ActiveUser.FromJson(File.ReadAllText(userPath));
+            var userRestore = ActiveUser.FromJson(File.ReadAllText(userPathRestore));
 
-            var passwordChange = new SwapPasswordsAfterPasswordChange();
-            passwordChange.SwapPasswords(userPath);
+            //var passwordChange = new SwapPasswordsAfterPasswordChange();
+            //passwordChange.SwapPasswords(userPath);
 
 
             // Act
@@ -28,6 +30,12 @@
             homePage.HelloButton.Click();
             profilePage.ChangePasswordButton.Click();
             profilePage.ChangePasswordForm(user);
+            profilePage.SubmitButton.Click();
+
+            //Restore original Password
+            homePage.HelloButton.Click();
+            profilePage.ChangePasswordButton.Click();
+            profilePage.ChangePasswordForm(userRestore);
             profilePage.SubmitButton.Click();
 
             // Assert
