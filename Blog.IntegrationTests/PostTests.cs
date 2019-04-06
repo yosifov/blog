@@ -24,6 +24,8 @@
 
             //Act
             var response = await Client.PostAsync("/Account/Register", requestContent);
+
+            //Assert
             response.StatusCode.Should().Be(500);
         }
 
@@ -43,9 +45,31 @@
 
             //Act
             var response = await Client.PostAsync("/Account/Register", requestContent);
+
+            //Assert
             response.StatusCode.Should().Be(500);
         }
-    
+
+        [Test]
+        [Category("Integration")]
+        public async Task PostArticleWithNoData_ShouldReturnInternalServerError()
+        {
+            //Arrange
+            var expectedArticle = new Article
+            {
+                Title = "",
+                Content = "",
+                
+            };
+            var requestContent = new StringContent(expectedArticle.ToJson());
+
+            //Act
+            var response = await Client.PostAsync("/Account/Register", requestContent);
+
+            //Assert
+            response.StatusCode.Should().Be(500);
+        }
+
         //[Test]
         //[Category("Integration")]
         //public async Task PostNewArticleWithNoData_ShouldReturnInternalServerError()
